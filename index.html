@@ -1,0 +1,919 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102c59"><title>Amazing Grace Model School | Inspiring Excellence</title>
+
+<meta name="description" content="Welcome to Amazing Grace Model School, providing quality Nursery, Primary and Secondary education. Building tomorrow's leaders through knowledge, discipline and excellence.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'DM Sans', sans-serif;
+        color: #243047;
+        background: #ffffff;
+        overflow-x: hidden;
+    }
+
+    :root {
+        --blue: #102c59;
+        --deep-blue: #091d3c;
+        --gold: #d9ad53;
+        --light-gold: #f6e8c6;
+        --light: #f5f7fb;
+        --text: #243047;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .topbar {
+        background: var(--deep-blue);
+        color: white;
+        padding: 11px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .topbar span {
+        margin-right: 18px;
+    }
+
+    .navbar {
+        height: 88px;
+        padding: 0 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 3px 20px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .logo-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--blue);
+        color: var(--gold);
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        font-family: Georgia, serif;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .logo-text h2 {
+        color: var(--blue);
+        font-size: 16px;
+        font-weight: 800;
+    }
+
+    .logo-text p {
+        color: #9a793b;
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-top: 3px;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .nav-links a:hover {
+        color: var(--gold);
+    }
+
+    .nav-cta {
+        background: var(--blue);
+        color: white !important;
+        padding: 13px 20px;
+        border-radius: 5px;
+    }
+
+    .menu-toggle {
+        display: none;
+        font-size: 27px;
+        color: var(--blue);
+        cursor: pointer;
+    }
+
+    .hero {
+        min-height: 590px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 90px 7%;
+        background:
+            linear-gradient(90deg, rgba(5,22,49,0.94), rgba(8,31,64,0.72), rgba(8,31,64,0.28)),
+            url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=2000&q=85') center/cover;
+        color: white;
+    }
+
+    .hero-content {
+        max-width: 700px;
+        animation: fadeUp 1s ease;
+    }
+
+    .hero-label {
+        display: inline-block;
+        color: var(--gold);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin-bottom: 22px;
+    }
+
+    .hero h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(42px, 6vw, 70px);
+        line-height: 1.12;
+        margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+        color: var(--gold);
+    }
+
+    .hero p {
+        color: #e4eaf4;
+        font-size: 16px;
+        line-height: 1.9;
+        max-width: 580px;
+        margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 15px 25px;
+        border-radius: 5px;
+        font-size: 13px;
+        font-weight: 700;
+        transition: 0.3s;
+    }
+
+    .btn-gold {
+        background: var(--gold);
+        color: var(--deep-blue);
+    }
+
+    .btn-gold:hover {
+        background: white;
+        transform: translateY(-3px);
+    }
+
+    .btn-outline {
+        border: 1px solid rgba(255,255,255,0.7);
+        color: white;
+    }
+
+    .btn-outline:hover {
+        background: white;
+        color: var(--blue);
+    }
+
+    .stats {
+        background: var(--blue);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 35px 7%;
+        color: white;
+    }
+
+    .stat {
+        text-align: center;
+        border-right: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .stat:last-child {
+        border: none;
+    }
+
+    .stat h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 30px;
+        color: var(--gold);
+    }
+
+    .stat p {
+        font-size: 12px;
+        color: #d6dfec;
+        margin-top: 7px;
+    }
+
+    section {
+        padding: 90px 7%;
+    }
+
+    .section-heading {
+        text-align: center;
+        max-width: 650px;
+        margin: 0 auto 50px;
+    }
+
+    .section-heading span {
+        color: #a47c30;
+        font-size: 11px;
+        letter-spacing: 3px;
+        font-weight: 800;
+    }
+
+    .section-heading h2 {
+        font-family: 'Playfair Display', serif;
+        color: var(--blue);
+        font-size: clamp(30px, 4vw, 42px);
+        margin: 13px 0;
+    }
+
+    .section-heading p {
+        color: #778196;
+        line-height: 1.8;
+        font-size: 14px;
+    }
+
+    .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 65px;
+    }
+
+    .about-image {
+        position: relative;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .about-badge {
+        position: absolute;
+        bottom: -20px;
+        right: -20px;
+        background: var(--gold);
+        color: var(--deep-blue);
+        padding: 22px;
+        border-radius: 8px;
+        font-weight: 800;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .about-content span {
+        color: #a47c30;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 3px;
+    }
+
+    .about-content h2 {
+        font-family: 'Playfair Display', serif;
+        color: var(--blue);
+        font-size: 39px;
+        margin: 15px 0 20px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+        color: #778196;
+        line-height: 1.9;
+        margin-bottom: 18px;
+    }
+
+    .check-list {
+        list-style: none;
+        margin: 25px 0;
+    }
+
+    .check-list li {
+        margin-bottom: 15px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .check-list li::before {
+        content: "✓";
+        color: #b58a3e;
+        font-weight: bold;
+        margin-right: 12px;
+    }
+
+    .programmes {
+        background: var(--light);
+    }
+
+    .programme-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .programme-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: 0.35s;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    }
+
+    .programme-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .programme-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .programme-info {
+        padding: 27px;
+    }
+
+    .programme-info h3 {
+        color: var(--blue);
+        font-family: 'Playfair Display', serif;
+        font-size: 23px;
+        margin-bottom: 12px;
+    }
+
+    .programme-info p {
+        color: #7a8496;
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .why-us {
+        background: var(--deep-blue);
+        color: white;
+    }
+
+    .why-us .section-heading h2 {
+        color: white;
+    }
+
+    .why-us .section-heading p {
+        color: #bdc9da;
+    }
+
+    .why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .why-card {
+        padding: 30px;
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .why-card:hover {
+        border-color: var(--gold);
+        background: rgba(255,255,255,0.04);
+    }
+
+    .why-icon {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .why-card h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .why-card p {
+        font-size: 13px;
+        color: #b9c5d7;
+        line-height: 1.8;
+    }
+
+    .admission {
+        background: linear-gradient(110deg, #f5e9cf, #fff9ed);
+        text-align: center;
+    }
+
+    .admission h2 {
+        font-family: 'Playfair Display', serif;
+        color: var(--blue);
+        font-size: clamp(30px, 4vw, 43px);
+        margin-bottom: 15px;
+    }
+
+    .admission p {
+        color: #6f7888;
+        max-width: 600px;
+        margin: 0 auto 27px;
+        line-height: 1.8;
+        font-size: 14px;
+    }
+
+    .contact {
+        background: white;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .contact-card {
+        text-align: center;
+        background: var(--light);
+        padding: 35px 20px;
+        border-radius: 8px;
+    }
+
+    .contact-card .icon {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .contact-card h3 {
+        color: var(--blue);
+        margin-bottom: 10px;
+        font-size: 17px;
+    }
+
+    .contact-card p {
+        color: #778196;
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    footer {
+        background: #071a35;
+        color: white;
+        padding: 60px 7% 25px;
+    }
+
+    .footer-main {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 45px;
+        margin-bottom: 45px;
+    }
+
+    .footer-main h3 {
+        color: var(--gold);
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+
+    .footer-main p,
+    .footer-main a {
+        color: #b9c5d7;
+        font-size: 13px;
+        line-height: 2;
+        display: block;
+    }
+
+    .footer-main a:hover {
+        color: var(--gold);
+    }
+
+    .copyright {
+        text-align: center;
+        border-top: 1px solid rgba(255,255,255,0.12);
+        padding-top: 22px;
+        color: #94a3b8;
+        font-size: 12px;
+    }
+
+    .copyright span {
+        color: var(--gold);
+    }
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: 0.8s ease;
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media(max-width: 900px) {
+        .nav-links {
+            gap: 14px;
+            font-size: 11px;
+        }
+
+        .about {
+            gap: 35px;
+        }
+
+        .programme-grid,
+        .why-grid {
+            gap: 15px;
+        }
+    }
+
+    @media(max-width: 700px) {
+        .topbar {
+            justify-content: center;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .navbar {
+            height: 75px;
+        }
+
+        .menu-toggle {
+            display: block;
+        }
+
+        .nav-links {
+            position: absolute;
+            top: 75px;
+            left: 0;
+            right: 0;
+            background: white;
+            display: none;
+            flex-direction: column;
+            align-items: stretch;
+            padding: 25px 7%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            gap: 22px;
+            font-size: 14px;
+        }
+
+        .nav-links.show {
+            display: flex;
+        }
+
+        .nav-cta {
+            text-align: center;
+        }
+
+        .logo-text h2 {
+            font-size: 13px;
+        }
+
+        .logo-text p {
+            font-size: 8px;
+        }
+
+        .hero {
+            min-height: 570px;
+            padding: 75px 7%;
+            background-position: 60% center;
+        }
+
+        .hero h1 {
+            font-size: 43px;
+        }
+
+        .hero p {
+            font-size: 14px;
+        }
+
+        .stats {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px 10px;
+        }
+
+        .stat:nth-child(2) {
+            border-right: none;
+        }
+
+        section {
+            padding: 70px 7%;
+        }
+
+        .about {
+            grid-template-columns: 1fr;
+            gap: 45px;
+        }
+
+        .about-image img {
+            height: 300px;
+        }
+
+        .about-badge {
+            right: 5px;
+        }
+
+        .about-content h2 {
+            font-size: 32px;
+        }
+
+        .programme-grid,
+        .why-grid,
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .programme-card img {
+            height: 230px;
+        }
+
+        .footer-main {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .hero-buttons .btn {
+            text-align: center;
+        }
+    }
+</style>
+
+</head><body><!-- TOP BAR -->
+<div class="topbar">
+    <div>
+        <span>📚 Quality Education</span>
+        <span>⭐ Excellence & Discipline</span>
+    </div>
+    <div>Welcome to Amazing Grace Model School</div>
+</div>
+
+<!-- NAVIGATION -->
+<header class="navbar">
+
+    <a href="#home" class="logo">
+        <div class="logo-icon">AG</div>
+        <div class="logo-text">
+            <h2>AMAZING GRACE</h2>
+            <p>MODEL SCHOOL</p>
+        </div>
+    </a>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <nav class="nav-links" id="navLinks">
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#about" onclick="closeMenu()">About Us</a>
+        <a href="#programmes" onclick="closeMenu()">Academics</a>
+        <a href="#why-us" onclick="closeMenu()">Why Choose Us</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+        <a href="#admission" class="nav-cta" onclick="closeMenu()">Admissions</a>
+    </nav>
+
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="hero-label">WELCOME TO AMAZING GRACE MODEL SCHOOL</span>
+
+        <h1>
+            Building Bright Minds.<br>
+            <span>Inspiring Great Futures.</span>
+        </h1>
+
+        <p>
+            Where knowledge meets character, talents are discovered,
+            and young minds are prepared to become tomorrow's leaders.
+            Give your child the foundation for a brighter future.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#admission" class="btn btn-gold">
+                Explore Admissions →
+            </a>
+
+            <a href="#about" class="btn btn-outline">
+                Discover Our School
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATISTICS -->
+<div class="stats">
+
+    <div class="stat">
+        <h2>3</h2>
+        <p>Levels of Education</p>
+    </div>
+
+    <div class="stat">
+        <h2>100%</h2>
+        <p>Commitment to Learning</p>
+    </div>
+
+    <div class="stat">
+        <h2>∞</h2>
+        <p>Possibilities for Growth</p>
+    </div>
+
+    <div class="stat">
+        <h2>1</h2>
+        <p>Mission: Excellence</p>
+    </div>
+
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <div class="about-image reveal">
+
+        <img
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=85"
+            alt="Students learning in a classroom"
+        >
+
+        <div class="about-badge">
+            LEARNING TODAY<br>
+            LEADING TOMORROW
+        </div>
+
+    </div>
+
+    <div class="about-content reveal">
+
+        <span>ABOUT OUR SCHOOL</span>
+
+        <h2>Education That Builds More Than Knowledge.</h2>
+
+        <p>
+            Amazing Grace Model School is committed to providing
+            a supportive learning environment where every child
+            can discover their potential, develop confidence and
+            grow into a responsible individual.
+        </p>
+
+        <p>
+            Through quality teaching, discipline, creativity and
+            character development, we aim to give our students
+            the foundation they need to succeed in life.
+        </p>
+
+        <ul class="check-list">
+            <li>Quality Nursery Education</li>
+            <li>Strong Primary School Foundation</li>
+            <li>Comprehensive Secondary Education</li>
+            <li>Character and Moral Development</li>
+        </ul>
+
+        <a href="#programmes" class="btn btn-gold">
+            Explore Our Academics →
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ACADEMICS -->
+<section class="programmes" id="programmes">
+
+    <div class="section-heading reveal">
+        <span>OUR ACADEMIC PROGRAMMES</span>
+        <h2>Learning at Every Stage</h2>
+        <p>
+            We provide educational opportunities designed to
+            support children through every important stage
+            of their academic journey.
+        </p>
+    </div>
+
+    <div class="programme-grid">
+
+        <div class="programme-card reveal">
+
+            <img
+                src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=85"
+                alt="Nursery school children"
+            >
+
+            <div class="programme-info">
+                <h3>Nursery School</h3>
+                <p>
+                    Building curiosity, creativity, communication
+                    and essential early learning skills through
+                    engaging educational activities.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="programme-card reveal">
+
+            <img
+                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=85"
+                alt="Primary school students"
+            >
+
+            <div class="programme-info">
+                <h3>Primary School</h3>
+                <p>
+                    Developing strong academic foundations,
+                    confidence, problem-solving abilities
+                    and essential life skills.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="programme-card reveal">
+
+            <img
+                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=85"
+                alt="Secondary school students"
+            >
+
+            <div class="programme-info">
+                <h3>Secondary School</h3>
+                <p>
+                    Preparing young adults for higher education,
+                    leadership, innovation and responsible
+                    participation in society.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-us" id="why-us">
+
+    <div class="section-heading reveal">
+        <span>WHY AMAZING GRACE MODEL SCHOOL</span>
+        <h2>A Foundation for Lifelong Success</h2>
+        <p>
+            Every child deserves an environment that encourages
+            learning, growth, confidence and excellence.
+        </p>
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card reveal">
+            <div class="why-icon">🎓</div>
+            <h3>Quality Education</h3>
+            <p>
+                Encouraging academic excellence through
+                structured teaching and meaningful learning.
+            </p>
+        </div>
+
+        <div class="why-card reveal">
+     
